@@ -108,7 +108,7 @@ export const FamilyCard = () => {
       <button
         type="button"
         onClick={() => setIsFlipped((value) => !value)}
-        className="mt-[21px] flex items-center gap-[9px] text-[11px] font-bold leading-[14px] text-[#168BE5]"
+        className="mt-[21px] flex items-center gap-[9px] text-[12px] font-bold leading-[14px] text-[#168BE5]"
       >
         <IconRefresh />
         Перевернуть
