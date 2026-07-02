@@ -39,24 +39,24 @@ const PersonBlock = ({
   birthDate: string;
 }) => (
   <section className="pt-[18px]">
-    <h3 className="text-[16px] font-bold uppercase leading-[21px] tracking-[-0.02em] text-[#EFF0F4]">
+    <h3 className="text-[14px] font-bold leading-[21px] tracking-[-0.02em] text-[#EFF0F4]">
       {name}
     </h3>
 
     <div className="mt-[22px]">
-      <p className="text-[16px] font-normal leading-[21px] tracking-[-0.02em] text-[#828898]">
+      <p className="text-[14px] font-normal leading-[21px] tracking-[-0.02em] text-[#828898]">
         Социальная поддержка действует
       </p>
-      <p className="mt-[10px] text-[16px] font-normal leading-[21px] tracking-[-0.02em] text-[#EFF0F4]">
+      <p className="mt-[10px] text-[14px] font-normal leading-[21px] tracking-[-0.02em] text-[#EFF0F4]">
         {support}
       </p>
     </div>
 
     <div className="mt-[22px]">
-      <p className="text-[16px] font-normal leading-[21px] tracking-[-0.02em] text-[#828898]">
+      <p className="text-[14px] font-normal leading-[21px] tracking-[-0.02em] text-[#828898]">
         Дата рождения
       </p>
-      <p className="mt-[10px] text-[16px] font-normal leading-[21px] tracking-[-0.02em] text-[#EFF0F4]">
+      <p className="mt-[10px] text-[14px] font-normal leading-[21px] tracking-[-0.02em] text-[#EFF0F4]">
         {birthDate}
       </p>
     </div>
@@ -68,7 +68,7 @@ export default function DetailsPage() {
     <main className="w-full flex-1 bg-black px-[4px] pb-[8px] pt-[22px] font-sans">
       <article className="mx-auto w-full max-w-[379px] rounded-b-[14px] rounded-t-[13px] bg-[#292A33] px-[22px] pb-[20px] pt-[27px] text-left">
         <section>
-          <h2 className="text-[18px] font-bold leading-[23px] tracking-[-0.02em] text-[#E7E9EF]">
+          <h2 className="text-[16px] font-bold leading-[23px] tracking-[-0.02em] text-[#E7E9EF]">
             104000003205937
           </h2>
 
@@ -105,7 +105,7 @@ export default function DetailsPage() {
         </section>
 
         <section className="pt-[25px]">
-          <h2 className="text-[18px] font-bold leading-[23px] tracking-[-0.02em] text-[#F0F1F4]">
+          <h2 className="text-[16px] font-bold leading-[23px] tracking-[-0.02em] text-[#F0F1F4]">
             Законные представители
           </h2>
 
@@ -119,7 +119,7 @@ export default function DetailsPage() {
         <div className="mt-[25px] h-px w-full bg-[#555866]" />
 
         <section className="pt-[25px]">
-          <h2 className="text-[18px] font-bold leading-[23px] tracking-[-0.02em] text-[#F0F1F4]">
+          <h2 className="text-[16px] font-bold leading-[23px] tracking-[-0.02em] text-[#F0F1F4]">
             Дети
           </h2>
 
