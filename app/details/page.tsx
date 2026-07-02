@@ -13,24 +13,24 @@ const PersonBlock = ({
   person: Person | (typeof familyMembers.children)[number];
 }) => (
   <section className="pt-[16px]">
-    <h3 className="text-[14.5px] font-bold leading-[21px] tracking-[-0.02em] text-[#EFF0F4]">
+    <h3 className="text-[14px] font-bold leading-[21px] tracking-[-0.02em] text-[#EFF0F4]">
       {formatPersonWithAge(person)}
     </h3>
 
     <div className="mt-[19px]">
-      <p className="text-[14.5px] font-normal leading-[21px] tracking-[-0.02em] text-[#828898]">
+      <p className="text-[14px] font-normal leading-[21px] tracking-[-0.02em] text-[#828898]">
         {uiText.socialSupportActive}
       </p>
-      <p className="mt-[8px] text-[14.5px] font-normal leading-[21px] tracking-[-0.02em] text-[#EFF0F4]">
+      <p className="mt-[8px] text-[14px] font-normal leading-[21px] tracking-[-0.02em] text-[#EFF0F4]">
         {person.support}
       </p>
     </div>
 
     <div className="mt-[19px]">
-      <p className="text-[14.5px] font-normal leading-[21px] tracking-[-0.02em] text-[#828898]">
+      <p className="text-[14px] font-normal leading-[21px] tracking-[-0.02em] text-[#828898]">
         {uiText.birthDate}
       </p>
-      <p className="mt-[8px] text-[14.5px] font-normal leading-[21px] tracking-[-0.02em] text-[#EFF0F4]">
+      <p className="mt-[8px] text-[14px] font-normal leading-[21px] tracking-[-0.02em] text-[#EFF0F4]">
         {person.birthDate}
       </p>
     </div>
@@ -49,28 +49,28 @@ export default function DetailsPage() {
           <div className="mt-[18px] h-px w-full bg-[#555866]" />
 
           <div className="mt-[22px]">
-            <p className="text-[14.5px] font-normal leading-[21px] tracking-[-0.02em] text-[#828898]">
+            <p className="text-[14px] font-normal leading-[21px] tracking-[-0.02em] text-[#828898]">
               {familyDocument.statusLabel}
             </p>
-            <p className="mt-[8px] text-[14.5px] font-normal leading-[21px] tracking-[-0.02em] text-[#EFF0F4]">
+            <p className="mt-[8px] text-[14px] font-normal leading-[21px] tracking-[-0.02em] text-[#EFF0F4]">
               {familyDocument.status}
             </p>
           </div>
 
           <div className="mt-[20px]">
-            <p className="text-[14.5px] font-normal leading-[21px] tracking-[-0.02em] text-[#828898]">
+            <p className="text-[14px] font-normal leading-[21px] tracking-[-0.02em] text-[#828898]">
               {familyDocument.establishedDateLabel}
             </p>
-            <p className="mt-[8px] text-[14.5px] font-normal leading-[21px] tracking-[-0.02em] text-[#EFF0F4]">
+            <p className="mt-[8px] text-[14px] font-normal leading-[21px] tracking-[-0.02em] text-[#EFF0F4]">
               {familyDocument.establishedDate}
             </p>
           </div>
 
           <div className="mt-[20px]">
-            <p className="text-[14.5px] font-normal leading-[21px] tracking-[-0.02em] text-[#828898]">
+            <p className="text-[14px] font-normal leading-[21px] tracking-[-0.02em] text-[#828898]">
               {familyDocument.authorityLabel}
             </p>
-            <p className="mt-[8px] max-w-[300px] text-[14.5px] font-normal leading-[22px] tracking-[-0.02em] text-[#EFF0F4]">
+            <p className="mt-[8px] max-w-[255px] text-[14px] font-normal leading-[22px] tracking-[-0.02em] text-[#EFF0F4]">
               {familyDocument.authority}
             </p>
           </div>
