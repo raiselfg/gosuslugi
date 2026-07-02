@@ -46,7 +46,7 @@ export default function DetailsPage() {
             {familyDocument.number}
           </h2>
 
-          <div className="mt-[21px] h-px w-full bg-[#555866]" />
+          <div className="mt-[18px] h-px w-full bg-[#555866]" />
 
           <div className="mt-[22px]">
             <p className="text-[15px] font-normal leading-[21px] tracking-[-0.02em] text-[#828898]">
