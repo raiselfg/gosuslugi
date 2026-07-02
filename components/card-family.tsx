@@ -1,9 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
-import { CopyIcon } from "./copi-icon";
-import { IconRefresh } from "./refresh-icon";
+import { CopyIcon } from "./icons/copy-icon";
+import { IconRefresh } from "./icons/refresh-icon";
 
 const familyMembers = [
   "ШЕВЧУК КАРИНА АРМАИСОВНА, 48 лет",
@@ -67,12 +66,12 @@ export const FamilyCard = () => {
                   </span>
                 </div>
 
-                <Link
+                <a
                   href="/details"
                   className="text-[13px] font-bold leading-[17px] text-[#1A8FE3]"
                 >
                   детали документа
-                </Link>
+                </a>
               </div>
             </div>
           </div>

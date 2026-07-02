@@ -1,13 +1,13 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { LeftArrowIcon } from "./left-arrow-icon";
-import { ShareIcon } from "./share-icon";
+import { LeftArrowIcon } from "./icons/left-arrow-icon";
+import { ShareIcon } from "./icons/share-icon";
 
 export const Header = () => {
   const router = useRouter();
   return (
-    <header className="w-full bg-black px-[14px] pb-[18px] pt-[10px] font-sans text-white sticky top-0">
+    <header className="w-full bg-black px-[14px] pb-[24px] pt-[32px] font-sans text-white sticky top-0 ">
       <div className="flex h-[31px] items-center">
         <button
           type="button"

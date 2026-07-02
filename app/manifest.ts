@@ -14,14 +14,26 @@ export default function manifest(): MetadataRoute.Manifest {
     lang: "ru",
     icons: [
       {
-        src: "/gosusligi-logo.png",
-        sizes: "any",
+        src: "/icon-192.png",
+        sizes: "192x192",
+        type: "image/png",
+        purpose: "any",
+      },
+      {
+        src: "/icon-512.png",
+        sizes: "512x512",
+        type: "image/png",
+        purpose: "any",
+      },
+      {
+        src: "/icon-512.png",
+        sizes: "512x512",
         type: "image/png",
         purpose: "maskable",
       },
       {
         src: "/gosusligi-logo.ico",
-        sizes: "any",
+        sizes: "233x256",
         type: "image/x-icon",
       },
     ],

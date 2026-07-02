@@ -1,14 +1,17 @@
-const CACHE_VERSION = "gosus-pwa-v2";
+const CACHE_VERSION = "gosus-pwa-v4";
 const APP_SHELL_CACHE = `${CACHE_VERSION}-shell`;
 const PAGE_CACHE = `${CACHE_VERSION}-pages`;
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const IMAGE_CACHE = `${CACHE_VERSION}-images`;
 const RUNTIME_CACHE = `${CACHE_VERSION}-runtime`;
 
+const OFFLINE_PAGES = ["/", "/details"];
+
 const PRECACHE_URLS = [
-  "/",
-  "/details",
+  ...OFFLINE_PAGES,
   "/manifest.webmanifest",
+  "/icon-192.png",
+  "/icon-512.png",
   "/gosusligi-logo.png",
   "/gosusligi-logo.ico",
 ];
@@ -45,6 +48,24 @@ self.addEventListener("activate", (event) => {
   );
 });
 
+const normalizePathname = (pathname) => {
+  if (pathname !== "/" && pathname.endsWith("/")) {
+    return pathname.slice(0, -1);
+  }
+
+  return pathname;
+};
+
+const getOfflinePageFallback = (pathname) => {
+  const normalizedPathname = normalizePathname(pathname);
+
+  if (OFFLINE_PAGES.includes(normalizedPathname)) {
+    return normalizedPathname;
+  }
+
+  return "/";
+};
+
 const isSameOriginGet = (request) =>
   request.method === "GET" &&
   new URL(request.url).origin === self.location.origin;
@@ -63,6 +84,24 @@ const putInCache = async (cacheName, request, response) => {
   await cache.put(request, response.clone());
 };
 
+const findCachedResponse = async (request, fallbackUrl, options = {}) => {
+  const cachedResponse = await caches.match(request, options);
+
+  if (cachedResponse) {
+    return cachedResponse;
+  }
+
+  if (fallbackUrl) {
+    const fallbackResponse = await caches.match(fallbackUrl);
+
+    if (fallbackResponse) {
+      return fallbackResponse;
+    }
+  }
+
+  return null;
+};
+
 const cacheFirst = async (request, cacheName) => {
   const cachedResponse = await caches.match(request);
 
@@ -76,25 +115,26 @@ const cacheFirst = async (request, cacheName) => {
   return response;
 };
 
-const networkFirst = async (request, cacheName, fallbackUrl = "/") => {
+const networkFirst = async (
+  request,
+  cacheName,
+  fallbackUrl = "/",
+  options = {},
+) => {
   try {
     const response = await fetch(request);
     await putInCache(cacheName, request, response);
 
     return response;
   } catch {
-    const cachedResponse = await caches.match(request);
+    const cachedResponse = await findCachedResponse(
+      request,
+      fallbackUrl,
+      options,
+    );
 
     if (cachedResponse) {
       return cachedResponse;
-    }
-
-    if (fallbackUrl) {
-      const fallbackResponse = await caches.match(fallbackUrl);
-
-      if (fallbackResponse) {
-        return fallbackResponse;
-      }
     }
 
     return Response.error();
@@ -130,12 +170,16 @@ self.addEventListener("fetch", (event) => {
   const { pathname } = url;
 
   if (request.mode === "navigate") {
-    event.respondWith(networkFirst(request, PAGE_CACHE, "/"));
+    event.respondWith(
+      networkFirst(request, PAGE_CACHE, getOfflinePageFallback(pathname), {
+        ignoreSearch: true,
+      }),
+    );
     return;
   }
 
   if (isPageDataRequest(request, url)) {
-    event.respondWith(networkFirst(request, PAGE_CACHE, "/"));
+    event.respondWith(networkFirst(request, PAGE_CACHE, null));
     return;
   }
 
