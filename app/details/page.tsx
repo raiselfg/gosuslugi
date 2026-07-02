@@ -97,7 +97,7 @@ export default function DetailsPage() {
             {uiText.children}
           </h2>
 
-          <div className="mt-[15px] space-y-[12px]">
+          <div className="mt-[14px] space-y-[12px]">
             {familyMembers.children.map((person) => (
               <PersonBlock key={person.name} person={person} />
             ))}

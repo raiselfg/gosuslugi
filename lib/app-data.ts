@@ -11,7 +11,7 @@ export const familyDocument = {
   statusLabel: "Статус многодетной семьи",
   status: "Установлен",
   establishedDateLabel: "Дата установления статуса",
-  establishedDate: "29.05.2024",
+  establishedDate: "29.10.2025",
   authorityLabel: "Орган, установивший статус",
   authority: "Администрация Фрунзенского района Санкт-Петербурга",
 } as const;
@@ -34,20 +34,20 @@ export const familyMembers = {
   children: [
     {
       name: "ШЕВЧУК СОФЬЯ СЕРГЕЕВНА",
-      age: 21,
-      support: "до 30.06.2026",
-      birthDate: "19.10.2004",
+      age: 18,
+      support: "до 30.06.2029",
+      birthDate: "19.10.2007",
     },
     {
       name: "ШЕВЧУК МАРГАРИТА СЕРГЕЕВНА",
       age: 19,
-      support: "до 30.06.2026",
+      support: "до 30.06.2029",
       birthDate: "13.07.2006",
     },
     {
       name: "ШЕВЧУК РОМАН СЕРГЕЕВИЧ",
       age: 12,
-      support: "до 30.06.2026",
+      support: "до 30.06.2029",
       birthDate: "17.02.2014",
     },
   ],
