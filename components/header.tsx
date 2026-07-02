@@ -10,7 +10,7 @@ export const Header = () => {
   const pathname = usePathname();
 
   return (
-    <header className="w-full bg-black px-[14px] pb-[18px] pt-[32px] font-sans text-white sticky top-0 ">
+    <header className="w-full bg-black px-[14px] pb-[18px] pt-[24px] font-sans text-white sticky top-0 ">
       <div className="flex h-[31px] items-center">
         <button
           type="button"
