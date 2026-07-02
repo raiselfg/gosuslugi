@@ -17,13 +17,13 @@ export const FamilyCard = () => {
 
   return (
     <div className="flex w-[369px] flex-col items-center font-sans">
-      <div className="h-[278px] w-full [perspective:1200px]">
+      <div className="h-[290px] w-full [perspective:1200px]">
         <div
           className={`relative h-full w-full transition-transform duration-700 ease-[cubic-bezier(0.2,0.8,0.2,1)] [transform-style:preserve-3d] ${
             isFlipped ? "[transform:rotateY(180deg)]" : ""
           }`}
         >
-          <div className="absolute inset-0 flex h-[278px] w-full overflow-hidden rounded-[11px] bg-[#E4F6F6] text-left [backface-visibility:hidden]">
+          <div className="absolute inset-0 flex h-[286px] w-full overflow-hidden rounded-[11px] bg-[#E4F6F6] text-left [backface-visibility:hidden]">
             <div className="flex w-full flex-col">
               <div className="flex h-[40px] items-center justify-center bg-[#CFEBEC]">
                 <span className="font-serif text-[12px] font-bold uppercase leading-none text-[#88BBBB]">
