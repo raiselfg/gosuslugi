@@ -42,7 +42,7 @@ export default function DetailsPage() {
     <main className="w-full flex-1 bg-black px-[4px] pb-[8px] pt-[20px] font-sans">
       <article className="mx-auto w-full max-w-[379px] rounded-b-[14px] rounded-t-[13px] bg-[#292A33] px-[22px] pb-[18px] pt-[24px] text-left">
         <section>
-          <h2 className="text-[16px] font-bold leading-[19px] tracking-[-0.02em] text-[#E7E9EF]">
+          <h2 className="text-[16px] font-bold leading-[18px] tracking-[-0.02em] text-[#E7E9EF]">
             {familyDocument.number}
           </h2>
 
