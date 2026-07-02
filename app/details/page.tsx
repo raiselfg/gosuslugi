@@ -39,24 +39,24 @@ const PersonBlock = ({
   birthDate: string;
 }) => (
   <section className="pt-[16px]">
-    <h3 className="text-[14px] font-bold leading-[21px] tracking-[-0.02em] text-[#EFF0F4]">
+    <h3 className="text-[15px] font-bold leading-[21px] tracking-[-0.02em] text-[#EFF0F4]">
       {name}
     </h3>
 
     <div className="mt-[19px]">
-      <p className="text-[14px] font-normal leading-[21px] tracking-[-0.02em] text-[#828898]">
+      <p className="text-[15px] font-normal leading-[21px] tracking-[-0.02em] text-[#828898]">
         Социальная поддержка действует
       </p>
-      <p className="mt-[8px] text-[14px] font-normal leading-[21px] tracking-[-0.02em] text-[#EFF0F4]">
+      <p className="mt-[8px] text-[15px] font-normal leading-[21px] tracking-[-0.02em] text-[#EFF0F4]">
         {support}
       </p>
     </div>
 
     <div className="mt-[19px]">
-      <p className="text-[14px] font-normal leading-[21px] tracking-[-0.02em] text-[#828898]">
+      <p className="text-[15px] font-normal leading-[21px] tracking-[-0.02em] text-[#828898]">
         Дата рождения
       </p>
-      <p className="mt-[8px] text-[14px] font-normal leading-[21px] tracking-[-0.02em] text-[#EFF0F4]">
+      <p className="mt-[8px] text-[15px] font-normal leading-[21px] tracking-[-0.02em] text-[#EFF0F4]">
         {birthDate}
       </p>
     </div>
@@ -75,28 +75,28 @@ export default function DetailsPage() {
           <div className="mt-[21px] h-px w-full bg-[#555866]" />
 
           <div className="mt-[22px]">
-            <p className="text-[16px] font-normal leading-[21px] tracking-[-0.02em] text-[#828898]">
+            <p className="text-[15px] font-normal leading-[21px] tracking-[-0.02em] text-[#828898]">
               Статус многодетной семьи
             </p>
-            <p className="mt-[8px] text-[16px] font-normal leading-[21px] tracking-[-0.02em] text-[#EFF0F4]">
+            <p className="mt-[8px] text-[15px] font-normal leading-[21px] tracking-[-0.02em] text-[#EFF0F4]">
               Установлен
             </p>
           </div>
 
           <div className="mt-[20px]">
-            <p className="text-[16px] font-normal leading-[21px] tracking-[-0.02em] text-[#828898]">
+            <p className="text-[15px] font-normal leading-[21px] tracking-[-0.02em] text-[#828898]">
               Дата установления статуса
             </p>
-            <p className="mt-[8px] text-[16px] font-normal leading-[21px] tracking-[-0.02em] text-[#EFF0F4]">
+            <p className="mt-[8px] text-[15px] font-normal leading-[21px] tracking-[-0.02em] text-[#EFF0F4]">
               29.05.2024
             </p>
           </div>
 
           <div className="mt-[20px]">
-            <p className="text-[16px] font-normal leading-[21px] tracking-[-0.02em] text-[#828898]">
+            <p className="text-[15px] font-normal leading-[21px] tracking-[-0.02em] text-[#828898]">
               Орган, установивший статус
             </p>
-            <p className="mt-[8px] max-w-[300px] text-[16px] font-normal leading-[22px] tracking-[-0.02em] text-[#EFF0F4]">
+            <p className="mt-[8px] max-w-[300px] text-[15px] font-normal leading-[22px] tracking-[-0.02em] text-[#EFF0F4]">
               Администрация Фрунзенского района Санкт-Петербурга
             </p>
           </div>
