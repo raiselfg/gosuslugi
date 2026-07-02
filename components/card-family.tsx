@@ -84,9 +84,9 @@ export const FamilyCard = () => {
                 </span>
               </div>
 
-              <div className="flex h-[238px] flex-col bg-[#E4F6F6] px-[25px] pt-[32px]">
+              <div className="flex h-[238px] flex-col bg-[#E4F6F6] px-[25px] pt-[42px]">
                 <div className="w-full overflow-hidden rounded-[4px] border border-[#D5E7E9] text-[#495762]">
-                  <div className="flex h-[23px] items-center border-b border-[#D5E7E9] px-[24px] text-[11px] font-semibold leading-[14px]">
+                  <div className="flex h-[23px] items-center border-b border-[#D5E7E9] px-[24px] text-[11px] font-bold leading-[14px]">
                     ФИО и возраст
                   </div>
 
