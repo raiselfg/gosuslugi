@@ -76,7 +76,7 @@ export const FamilyCard = () => {
             </div>
           </div>
 
-          <div className="absolute inset-0 flex h-[278px] w-full overflow-hidden rounded-[11px] bg-[#E4F6F6] text-left [backface-visibility:hidden] [transform:rotateY(180deg)]">
+          <div className="absolute inset-0 flex h-[286px] w-full overflow-hidden rounded-[11px] bg-[#E4F6F6] text-left [backface-visibility:hidden] [transform:rotateY(180deg)]">
             <div className="flex w-full flex-col">
               <div className="flex h-[40px] items-center justify-center bg-[#CFEBEC]">
                 <span className="font-serif text-[12px] font-bold uppercase leading-none text-[#88BBBB]">
