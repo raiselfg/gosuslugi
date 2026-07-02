@@ -80,5 +80,24 @@ export const installPromptText = {
   dismissInstall: "Скрыть установку приложения",
 } as const;
 
+const getAgeWord = (age: number) => {
+  const lastTwoDigits = age % 100;
+  const lastDigit = age % 10;
+
+  if (lastTwoDigits >= 11 && lastTwoDigits <= 14) {
+    return "лет";
+  }
+
+  if (lastDigit === 1) {
+    return "год";
+  }
+
+  if (lastDigit >= 2 && lastDigit <= 4) {
+    return "года";
+  }
+
+  return "лет";
+};
+
 export const formatPersonWithAge = (person: { name: string; age: number }) =>
-  `${person.name}, ${person.age} лет`;
+  `${person.name}, ${person.age} ${getAgeWord(person.age)}`;
