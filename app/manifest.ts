@@ -1,17 +1,18 @@
 import type { MetadataRoute } from "next";
+import { appInfo } from "@/lib/app-data";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Госуслуги",
-    short_name: "Госуслуги",
-    description: "Приложение Госуслуги",
+    name: appInfo.name,
+    short_name: appInfo.name,
+    description: appInfo.description,
     start_url: "/",
     scope: "/",
     display: "standalone",
     background_color: "#000000",
     theme_color: "#000000",
     orientation: "portrait",
-    lang: "ru",
+    lang: appInfo.lang,
     icons: [
       {
         src: "/icon-192.png",

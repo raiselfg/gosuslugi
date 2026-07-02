@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Roboto_Flex } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/header";
+import { appInfo } from "@/lib/app-data";
 import { InstallPrompt } from "@/components/install-prompt";
 import { ServiceWorkerRegister } from "@/components/service-worker-register";
 
@@ -11,14 +12,14 @@ const robot = Roboto_Flex({
 });
 
 export const metadata: Metadata = {
-  title: "Госуслуги",
-  description: "Приложение Госуслуги",
-  applicationName: "Госуслуги",
+  title: appInfo.name,
+  description: appInfo.description,
+  applicationName: appInfo.name,
   manifest: "/manifest.webmanifest",
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",
-    title: "Госуслуги",
+    title: appInfo.name,
   },
   formatDetection: {
     telephone: false,
@@ -65,7 +66,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ru" className={`${robot.variable} h-full antialiased`}>
+    <html
+      lang={appInfo.lang}
+      className={`${robot.variable} h-full antialiased`}
+    >
       <body className="min-h-full flex flex-col items-center px-1 bg-background">
         <ServiceWorkerRegister />
         <InstallPrompt />

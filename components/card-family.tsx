@@ -1,15 +1,18 @@
 "use client";
 
 import { useState } from "react";
+import {
+  familyDocument,
+  familyMembers,
+  formatPersonWithAge,
+  uiText,
+} from "@/lib/app-data";
 import { CopyIcon } from "./icons/copy-icon";
 import { IconRefresh } from "./icons/refresh-icon";
 
-const familyMembers = [
-  "ШЕВЧУК КАРИНА АРМАИСОВНА, 48 лет",
-  "ШЕВЧУК СЕРГЕЙ АЛЕКСЕЕВИЧ, 46 лет",
-  "ШЕВЧУК СОФЬЯ СЕРГЕЕВНА, 21 год",
-  "ШЕВЧУК МАРГАРИТА СЕРГЕЕВНА, 19 лет",
-  "ШЕВЧУК РОМАН СЕРГЕЕВИЧ, 12 лет",
+const allFamilyMembers = [
+  ...familyMembers.representatives,
+  ...familyMembers.children,
 ];
 
 export const FamilyCard = () => {
@@ -27,42 +30,42 @@ export const FamilyCard = () => {
             <div className="flex w-full flex-col">
               <div className="flex h-[40px] items-center justify-center bg-[#CFEBEC]">
                 <span className="font-serif text-[12px] font-bold uppercase leading-none text-[#88BBBB]">
-                  УДОСТОВЕРЕНИЕ МНОГОДЕТНОЙ СЕМЬИ
+                  {familyDocument.title}
                 </span>
               </div>
 
               <div className="flex h-[238px] flex-col bg-[#E4F6F6] px-[19px] pb-[18px] pt-[25px]">
                 <div className="mb-[14px] flex items-start gap-[9px] text-[#2D8C88]">
                   <span className="text-[18px] font-semibold leading-[24px] tracking-[0.01em]">
-                    104000003205937
+                    {familyDocument.number}
                   </span>
                   <CopyIcon className="mt-[1px] size-[19px] shrink-0" />
                 </div>
 
                 <div className="mb-[14px] flex flex-col items-start gap-0.5">
                   <span className="text-[11px] font-medium leading-[14px] text-[#50606B]">
-                    Статус многодетной семьи
+                    {familyDocument.statusLabel}
                   </span>
                   <span className="text-[11.5px] font-semibold uppercase leading-[14px] tracking-[0.01em] text-[#26333A]">
-                    УСТАНОВЛЕН
+                    {familyDocument.status.toUpperCase()}
                   </span>
                 </div>
 
                 <div className="mb-[14px] flex flex-col items-start gap-0.5">
                   <span className="text-[11px] font-medium leading-[14px] text-[#50606B]">
-                    Дата установления статуса
+                    {familyDocument.establishedDateLabel}
                   </span>
                   <span className="text-[11.5px] font-semibold leading-[14px] tracking-[0.01em] text-[#26333A]">
-                    29.05.2024
+                    {familyDocument.establishedDate}
                   </span>
                 </div>
 
                 <div className="mb-[12px] flex flex-col items-start gap-0.5">
                   <span className="text-[11px] font-medium leading-[14px] text-[#50606B]">
-                    Орган, установивший статус
+                    {familyDocument.authorityLabel}
                   </span>
                   <span className="max-w-[297px] text-[11.5px] font-semibold uppercase leading-[16px] tracking-[0.01em] text-[#26333A]">
-                    АДМИНИСТРАЦИЯ ФРУНЗЕНСКОГО РАЙОНА САНКТ-ПЕТЕРБУРГА
+                    {familyDocument.authority.toUpperCase()}
                   </span>
                 </div>
 
@@ -70,7 +73,7 @@ export const FamilyCard = () => {
                   href="/details"
                   className="text-[13px] font-bold leading-[17px] text-[#1A8FE3]"
                 >
-                  детали документа
+                  {uiText.documentDetails}
                 </a>
               </div>
             </div>
@@ -80,22 +83,22 @@ export const FamilyCard = () => {
             <div className="flex w-full flex-col">
               <div className="flex h-[40px] items-center justify-center bg-[#CFEBEC]">
                 <span className="font-serif text-[12px] font-bold uppercase leading-none text-[#88BBBB]">
-                  УДОСТОВЕРЕНИЕ МНОГОДЕТНОЙ СЕМЬИ
+                  {familyDocument.title}
                 </span>
               </div>
 
               <div className="flex h-[238px] flex-col bg-[#E4F6F6] px-[25px] pt-[42px]">
                 <div className="w-full overflow-hidden rounded-[4px] border border-[#D5E7E9] text-[#62707B]">
                   <div className="flex h-[23px] items-center border-b border-[#D5E7E9] px-[24px] text-[11px] font-bold leading-[14px]">
-                    ФИО и возраст
+                    {uiText.fullNameAndAge}
                   </div>
 
-                  {familyMembers.map((member) => (
+                  {allFamilyMembers.map((member) => (
                     <div
-                      key={member}
+                      key={member.name}
                       className="flex h-[23px] items-center border-b border-[#D5E7E9] px-[24px] text-[11px] font-semibold uppercase leading-[14px] last:border-b-0"
                     >
-                      {member}
+                      {formatPersonWithAge(member)}
                     </div>
                   ))}
                 </div>
@@ -111,7 +114,7 @@ export const FamilyCard = () => {
         className="mt-[21px] flex items-center gap-[9px] text-[12px] font-bold leading-[14px] text-[#168BE5]"
       >
         <IconRefresh />
-        Перевернуть
+        {uiText.flipCard}
       </button>
     </div>
   );

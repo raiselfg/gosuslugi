@@ -1,63 +1,37 @@
-const representatives = [
-  {
-    name: "ШЕВЧУК КАРИНА АРМАИСОВНА, 48 лет",
-    support: "Бессрочно",
-    birthDate: "08.02.1978",
-  },
-  {
-    name: "ШЕВЧУК СЕРГЕЙ АЛЕКСЕЕВИЧ, 46 лет",
-    support: "Бессрочно",
-    birthDate: "05.10.1979",
-  },
-];
+import {
+  familyDocument,
+  familyMembers,
+  formatPersonWithAge,
+  uiText,
+} from "@/lib/app-data";
 
-const children = [
-  {
-    name: "ШЕВЧУК СОФЬЯ СЕРГЕЕВНА, 21 год",
-    support: "до 30.06.2026",
-    birthDate: "19.10.2004",
-  },
-  {
-    name: "ШЕВЧУК МАРГАРИТА СЕРГЕЕВНА, 19 лет",
-    support: "до 30.06.2026",
-    birthDate: "13.07.2006",
-  },
-  {
-    name: "ШЕВЧУК РОМАН СЕРГЕЕВИЧ, 12 лет",
-    support: "до 30.06.2026",
-    birthDate: "17.02.2014",
-  },
-];
+type Person = (typeof familyMembers.representatives)[number];
 
 const PersonBlock = ({
-  name,
-  support,
-  birthDate,
+  person,
 }: {
-  name: string;
-  support: string;
-  birthDate: string;
+  person: Person | (typeof familyMembers.children)[number];
 }) => (
   <section className="pt-[16px]">
     <h3 className="text-[15px] font-bold leading-[21px] tracking-[-0.02em] text-[#EFF0F4]">
-      {name}
+      {formatPersonWithAge(person)}
     </h3>
 
     <div className="mt-[19px]">
       <p className="text-[15px] font-normal leading-[21px] tracking-[-0.02em] text-[#828898]">
-        Социальная поддержка действует
+        {uiText.socialSupportActive}
       </p>
       <p className="mt-[8px] text-[15px] font-normal leading-[21px] tracking-[-0.02em] text-[#EFF0F4]">
-        {support}
+        {person.support}
       </p>
     </div>
 
     <div className="mt-[19px]">
       <p className="text-[15px] font-normal leading-[21px] tracking-[-0.02em] text-[#828898]">
-        Дата рождения
+        {uiText.birthDate}
       </p>
       <p className="mt-[8px] text-[15px] font-normal leading-[21px] tracking-[-0.02em] text-[#EFF0F4]">
-        {birthDate}
+        {person.birthDate}
       </p>
     </div>
   </section>
@@ -69,35 +43,35 @@ export default function DetailsPage() {
       <article className="mx-auto w-full max-w-[379px] rounded-b-[14px] rounded-t-[13px] bg-[#292A33] px-[22px] pb-[18px] pt-[24px] text-left">
         <section>
           <h2 className="text-[16px] font-bold leading-[23px] tracking-[-0.02em] text-[#E7E9EF]">
-            104000003205937
+            {familyDocument.number}
           </h2>
 
           <div className="mt-[21px] h-px w-full bg-[#555866]" />
 
           <div className="mt-[22px]">
             <p className="text-[15px] font-normal leading-[21px] tracking-[-0.02em] text-[#828898]">
-              Статус многодетной семьи
+              {familyDocument.statusLabel}
             </p>
             <p className="mt-[8px] text-[15px] font-normal leading-[21px] tracking-[-0.02em] text-[#EFF0F4]">
-              Установлен
+              {familyDocument.status}
             </p>
           </div>
 
           <div className="mt-[20px]">
             <p className="text-[15px] font-normal leading-[21px] tracking-[-0.02em] text-[#828898]">
-              Дата установления статуса
+              {familyDocument.establishedDateLabel}
             </p>
             <p className="mt-[8px] text-[15px] font-normal leading-[21px] tracking-[-0.02em] text-[#EFF0F4]">
-              29.05.2024
+              {familyDocument.establishedDate}
             </p>
           </div>
 
           <div className="mt-[20px]">
             <p className="text-[15px] font-normal leading-[21px] tracking-[-0.02em] text-[#828898]">
-              Орган, установивший статус
+              {familyDocument.authorityLabel}
             </p>
             <p className="mt-[8px] max-w-[300px] text-[15px] font-normal leading-[22px] tracking-[-0.02em] text-[#EFF0F4]">
-              Администрация Фрунзенского района Санкт-Петербурга
+              {familyDocument.authority}
             </p>
           </div>
 
@@ -106,12 +80,12 @@ export default function DetailsPage() {
 
         <section className="pt-[22px]">
           <h2 className="text-[16px] font-bold leading-[23px] tracking-[-0.02em] text-[#F0F1F4]">
-            Законные представители
+            {uiText.legalRepresentatives}
           </h2>
 
           <div className="mt-[15px] space-y-[12px]">
-            {representatives.map((person) => (
-              <PersonBlock key={person.name} {...person} />
+            {familyMembers.representatives.map((person) => (
+              <PersonBlock key={person.name} person={person} />
             ))}
           </div>
         </section>
@@ -120,12 +94,12 @@ export default function DetailsPage() {
 
         <section className="pt-[22px]">
           <h2 className="text-[16px] font-bold leading-[23px] tracking-[-0.02em] text-[#F0F1F4]">
-            Дети
+            {uiText.children}
           </h2>
 
           <div className="mt-[15px] space-y-[12px]">
-            {children.map((person) => (
-              <PersonBlock key={person.name} {...person} />
+            {familyMembers.children.map((person) => (
+              <PersonBlock key={person.name} person={person} />
             ))}
           </div>
         </section>
@@ -134,7 +108,7 @@ export default function DetailsPage() {
           type="button"
           className="mt-[25px] flex h-[58px] w-full items-center justify-center rounded-[12px] bg-[#168BF2] text-[17px] font-normal leading-[22px] tracking-[-0.02em] text-white"
         >
-          Поделиться
+          {uiText.share}
         </button>
       </article>
     </main>

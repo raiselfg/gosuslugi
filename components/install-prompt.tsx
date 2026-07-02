@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { installPromptText } from "@/lib/app-data";
 
 type BeforeInstallPromptEvent = Event & {
   prompt: () => Promise<void>;
@@ -20,18 +21,18 @@ const getManualInstallText = () => {
   const isFirefox = /firefox/.test(userAgent);
 
   if (isIos) {
-    return "В Safari нажмите «Поделиться» → «На экран Домой».";
+    return installPromptText.ios;
   }
 
   if (isAndroid) {
-    return "Откройте меню браузера ⋮ → «Установить приложение» или «Добавить на главный экран».";
+    return installPromptText.android;
   }
 
   if (isFirefox) {
-    return "Откройте меню браузера и выберите установку или добавление приложения на экран.";
+    return installPromptText.firefox;
   }
 
-  return "Если системная кнопка не появилась, откройте меню браузера → «Установить приложение».";
+  return installPromptText.default;
 };
 
 export const InstallPrompt = () => {
@@ -113,12 +114,10 @@ export const InstallPrompt = () => {
       <div className="flex w-full max-w-[360px] items-center gap-[12px] rounded-[16px] bg-[#292A33] px-[14px] py-[12px] text-white shadow-[0_10px_30px_rgba(0,0,0,0.45)]">
         <div className="min-w-0 flex-1">
           <p className="text-[14px] font-semibold leading-[18px]">
-            Установить приложение
+            {installPromptText.title}
           </p>
           <p className="mt-[2px] text-[12px] leading-[16px] text-[#9AA4B8]">
-            {isNativePrompt
-              ? "Будет доступно быстрее и сможет открываться offline"
-              : manualText}
+            {isNativePrompt ? installPromptText.nativeDescription : manualText}
           </p>
         </div>
 
@@ -128,13 +127,13 @@ export const InstallPrompt = () => {
             onClick={handleInstall}
             className="shrink-0 rounded-[10px] bg-[#168BF2] px-[12px] py-[8px] text-[13px] font-semibold leading-[16px]"
           >
-            Установить
+            {installPromptText.installButton}
           </button>
         ) : null}
 
         <button
           type="button"
-          aria-label="Скрыть установку приложения"
+          aria-label={installPromptText.dismissInstall}
           onClick={() => setIsVisible(false)}
           className="shrink-0 text-[20px] leading-none text-[#9AA4B8]"
         >

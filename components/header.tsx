@@ -1,6 +1,7 @@
 "use client";
 
 import { usePathname, useRouter } from "next/navigation";
+import { appInfo, uiText } from "@/lib/app-data";
 import { LeftArrowIcon } from "./icons/left-arrow-icon";
 import { ShareIcon } from "./icons/share-icon";
 import { DotsShareIcon } from "./icons/3dots-icon";
@@ -15,19 +16,19 @@ export const Header = () => {
         <button
           type="button"
           onClick={() => router.back()}
-          aria-label="Назад"
+          aria-label={uiText.back}
           className="mr-[28px] flex size-[24px] items-center justify-center"
         >
           <LeftArrowIcon />
         </button>
 
         <p className="flex-1 text-[20px] font-semibold leading-[28px] tracking-[-0.03em] text-[#E8E9EB]">
-          Многодетная семья
+          {appInfo.pageTitle}
         </p>
 
         <button
           type="button"
-          aria-label="Меню"
+          aria-label={uiText.menu}
           className="ml-[10px] flex size-[24px] items-center justify-center"
         >
           {pathname.startsWith("/details") ? <ShareIcon /> : <DotsShareIcon />}
