@@ -75,15 +75,15 @@ export default function DetailsPage() {
             </p>
           </div>
 
-          <div className="mt-[21px] h-px w-full bg-[#555866]" />
+          <div className="mt-[18px] h-px w-full bg-[#555866]" />
         </section>
 
         <section className="pt-[22px]">
-          <h2 className="text-[16px] font-bold leading-[23px] tracking-[-0.02em] text-[#F0F1F4]">
+          <h2 className="text-[16px] font-bold leading-[21px] tracking-[-0.02em] text-[#F0F1F4]">
             {uiText.legalRepresentatives}
           </h2>
 
-          <div className="mt-[15px] space-y-[12px]">
+          <div className="mt-[12px] space-y-[12px]">
             {familyMembers.representatives.map((person) => (
               <PersonBlock key={person.name} person={person} />
             ))}
