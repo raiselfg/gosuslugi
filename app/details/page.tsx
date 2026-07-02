@@ -38,25 +38,25 @@ const PersonBlock = ({
   support: string;
   birthDate: string;
 }) => (
-  <section className="pt-[18px]">
+  <section className="pt-[16px]">
     <h3 className="text-[14px] font-bold leading-[21px] tracking-[-0.02em] text-[#EFF0F4]">
       {name}
     </h3>
 
-    <div className="mt-[22px]">
+    <div className="mt-[19px]">
       <p className="text-[14px] font-normal leading-[21px] tracking-[-0.02em] text-[#828898]">
         Социальная поддержка действует
       </p>
-      <p className="mt-[10px] text-[14px] font-normal leading-[21px] tracking-[-0.02em] text-[#EFF0F4]">
+      <p className="mt-[8px] text-[14px] font-normal leading-[21px] tracking-[-0.02em] text-[#EFF0F4]">
         {support}
       </p>
     </div>
 
-    <div className="mt-[22px]">
+    <div className="mt-[19px]">
       <p className="text-[14px] font-normal leading-[21px] tracking-[-0.02em] text-[#828898]">
         Дата рождения
       </p>
-      <p className="mt-[10px] text-[14px] font-normal leading-[21px] tracking-[-0.02em] text-[#EFF0F4]">
+      <p className="mt-[8px] text-[14px] font-normal leading-[21px] tracking-[-0.02em] text-[#EFF0F4]">
         {birthDate}
       </p>
     </div>
@@ -65,65 +65,65 @@ const PersonBlock = ({
 
 export default function DetailsPage() {
   return (
-    <main className="w-full flex-1 bg-black px-[4px] pb-[8px] pt-[22px] font-sans">
-      <article className="mx-auto w-full max-w-[379px] rounded-b-[14px] rounded-t-[13px] bg-[#292A33] px-[22px] pb-[20px] pt-[27px] text-left">
+    <main className="w-full flex-1 bg-black px-[4px] pb-[8px] pt-[20px] font-sans">
+      <article className="mx-auto w-full max-w-[379px] rounded-b-[14px] rounded-t-[13px] bg-[#292A33] px-[22px] pb-[18px] pt-[24px] text-left">
         <section>
           <h2 className="text-[16px] font-bold leading-[23px] tracking-[-0.02em] text-[#E7E9EF]">
             104000003205937
           </h2>
 
-          <div className="mt-[24px] h-px w-full bg-[#555866]" />
+          <div className="mt-[21px] h-px w-full bg-[#555866]" />
 
-          <div className="mt-[25px]">
+          <div className="mt-[22px]">
             <p className="text-[16px] font-normal leading-[21px] tracking-[-0.02em] text-[#828898]">
               Статус многодетной семьи
             </p>
-            <p className="mt-[10px] text-[16px] font-normal leading-[21px] tracking-[-0.02em] text-[#EFF0F4]">
+            <p className="mt-[8px] text-[16px] font-normal leading-[21px] tracking-[-0.02em] text-[#EFF0F4]">
               Установлен
             </p>
           </div>
 
-          <div className="mt-[23px]">
+          <div className="mt-[20px]">
             <p className="text-[16px] font-normal leading-[21px] tracking-[-0.02em] text-[#828898]">
               Дата установления статуса
             </p>
-            <p className="mt-[10px] text-[16px] font-normal leading-[21px] tracking-[-0.02em] text-[#EFF0F4]">
+            <p className="mt-[8px] text-[16px] font-normal leading-[21px] tracking-[-0.02em] text-[#EFF0F4]">
               29.05.2024
             </p>
           </div>
 
-          <div className="mt-[23px]">
+          <div className="mt-[20px]">
             <p className="text-[16px] font-normal leading-[21px] tracking-[-0.02em] text-[#828898]">
               Орган, установивший статус
             </p>
-            <p className="mt-[10px] max-w-[300px] text-[16px] font-normal leading-[22px] tracking-[-0.02em] text-[#EFF0F4]">
+            <p className="mt-[8px] max-w-[300px] text-[16px] font-normal leading-[22px] tracking-[-0.02em] text-[#EFF0F4]">
               Администрация Фрунзенского района Санкт-Петербурга
             </p>
           </div>
 
-          <div className="mt-[24px] h-px w-full bg-[#555866]" />
+          <div className="mt-[21px] h-px w-full bg-[#555866]" />
         </section>
 
-        <section className="pt-[25px]">
+        <section className="pt-[22px]">
           <h2 className="text-[16px] font-bold leading-[23px] tracking-[-0.02em] text-[#F0F1F4]">
             Законные представители
           </h2>
 
-          <div className="mt-[18px] space-y-[16px]">
+          <div className="mt-[15px] space-y-[12px]">
             {representatives.map((person) => (
               <PersonBlock key={person.name} {...person} />
             ))}
           </div>
         </section>
 
-        <div className="mt-[25px] h-px w-full bg-[#555866]" />
+        <div className="mt-[22px] h-px w-full bg-[#555866]" />
 
-        <section className="pt-[25px]">
+        <section className="pt-[22px]">
           <h2 className="text-[16px] font-bold leading-[23px] tracking-[-0.02em] text-[#F0F1F4]">
             Дети
           </h2>
 
-          <div className="mt-[18px] space-y-[16px]">
+          <div className="mt-[15px] space-y-[12px]">
             {children.map((person) => (
               <PersonBlock key={person.name} {...person} />
             ))}
@@ -132,7 +132,7 @@ export default function DetailsPage() {
 
         <button
           type="button"
-          className="mt-[28px] flex h-[58px] w-full items-center justify-center rounded-[12px] bg-[#168BF2] text-[17px] font-normal leading-[22px] tracking-[-0.02em] text-white"
+          className="mt-[25px] flex h-[58px] w-full items-center justify-center rounded-[12px] bg-[#168BF2] text-[17px] font-normal leading-[22px] tracking-[-0.02em] text-white"
         >
           Поделиться
         </button>
