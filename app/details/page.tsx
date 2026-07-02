@@ -17,20 +17,20 @@ const PersonBlock = ({
       {formatPersonWithAge(person)}
     </h3>
 
-    <div className="mt-[19px]">
+    <div className="mt-[18px]">
       <p className="text-[14px] font-normal leading-[21px] tracking-[-0.02em] text-[#828898]">
         {uiText.socialSupportActive}
       </p>
-      <p className="mt-[8px] text-[14px] font-normal leading-[21px] tracking-[-0.02em] text-[#EFF0F4]">
+      <p className="mt-[6px] text-[14px] font-normal leading-[21px] tracking-[-0.02em] text-[#EFF0F4]">
         {person.support}
       </p>
     </div>
 
-    <div className="mt-[19px]">
+    <div className="mt-[18px]">
       <p className="text-[14px] font-normal leading-[21px] tracking-[-0.02em] text-[#828898]">
         {uiText.birthDate}
       </p>
-      <p className="mt-[8px] text-[14px] font-normal leading-[21px] tracking-[-0.02em] text-[#EFF0F4]">
+      <p className="mt-[6px] text-[14px] font-normal leading-[21px] tracking-[-0.02em] text-[#EFF0F4]">
         {person.birthDate}
       </p>
     </div>
