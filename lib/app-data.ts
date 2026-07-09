@@ -33,7 +33,7 @@ export const familyMembers = {
     {
       name: "ШЕВЧУК МАРГАРИТА СЕРГЕЕВНА",
       support: "до 30.06.2029",
-      birthDate: "13.07.2001",
+      birthDate: "13.07.2006",
     },
     {
       name: "ШЕВЧУК СОФЬЯ СЕРГЕЕВНА",
