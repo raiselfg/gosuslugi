@@ -20,13 +20,11 @@ export const familyMembers = {
   representatives: [
     {
       name: "ШЕВЧУК КАРИНА АРМАИСОВНА",
-      age: 48,
       support: "Бессрочно",
       birthDate: "08.02.1978",
     },
     {
       name: "ШЕВЧУК СЕРГЕЙ АЛЕКСЕЕВИЧ",
-      age: 46,
       support: "Бессрочно",
       birthDate: "05.10.1979",
     },
@@ -34,19 +32,16 @@ export const familyMembers = {
   children: [
     {
       name: "ШЕВЧУК МАРГАРИТА СЕРГЕЕВНА",
-      age: 19,
       support: "до 30.06.2029",
       birthDate: "13.07.2006",
     },
     {
       name: "ШЕВЧУК СОФЬЯ СЕРГЕЕВНА",
-      age: 18,
       support: "до 30.06.2029",
       birthDate: "19.10.2007",
     },
     {
       name: "ШЕВЧУК РОМАН СЕРГЕЕВИЧ",
-      age: 12,
       support: "до 30.06.2029",
       birthDate: "17.02.2014",
     },
@@ -99,5 +94,28 @@ const getAgeWord = (age: number) => {
   return "лет";
 };
 
-export const formatPersonWithAge = (person: { name: string; age: number }) =>
-  `${person.name}, ${person.age} ${getAgeWord(person.age)}`;
+export const calcAge = (birthDate: string) => {
+  const [day, month, year] = birthDate.split(".").map(Number);
+  const birth = new Date(year, month - 1, day);
+  const now = new Date();
+
+  let age = now.getFullYear() - birth.getFullYear();
+  const hasNotHadBirthdayThisYear =
+    now.getMonth() < birth.getMonth() ||
+    (now.getMonth() === birth.getMonth() && now.getDate() < birth.getDate());
+
+  if (hasNotHadBirthdayThisYear) {
+    age -= 1;
+  }
+
+  return age;
+};
+
+export const formatPersonWithAge = (person: {
+  name: string;
+  birthDate: string;
+}) => {
+  const age = calcAge(person.birthDate);
+
+  return `${person.name}, ${age} ${getAgeWord(age)}`;
+};
