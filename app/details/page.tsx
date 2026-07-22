@@ -12,25 +12,25 @@ const PersonBlock = ({
 }: {
   person: Person | (typeof familyMembers.children)[number];
 }) => (
-  <section className="pt-[16px]">
-    <h3 className="text-[14px] font-bold leading-[21px] tracking-[-0.02em] text-[#EFF0F4]">
+  <section className="pt-4">
+    <h3 className="text-[14px] font-bold leading-5.25 tracking-[-0.02em] text-[#EFF0F4]">
       {formatPersonWithAge(person)}
     </h3>
 
-    <div className="mt-[18px]">
-      <p className="text-[14px] font-normal leading-[21px] tracking-[-0.02em] text-[#828898]">
+    <div className="mt-4.5">
+      <p className="text-[14px] font-normal leading-5.25 tracking-[-0.02em] text-[#828898]">
         {uiText.socialSupportActive}
       </p>
-      <p className="mt-[6px] text-[14px] font-normal leading-[21px] tracking-[-0.02em] text-[#EFF0F4]">
+      <p className="mt-1.5 text-[14px] font-normal leading-5.25 tracking-[-0.02em] text-[#EFF0F4]">
         {person.support}
       </p>
     </div>
 
-    <div className="mt-[18px]">
-      <p className="text-[14px] font-normal leading-[21px] tracking-[-0.02em] text-[#828898]">
+    <div className="mt-4.5">
+      <p className="text-[14px] font-normal leading-5.25 tracking-[-0.02em] text-[#828898]">
         {uiText.birthDate}
       </p>
-      <p className="mt-[6px] text-[14px] font-normal leading-[21px] tracking-[-0.02em] text-[#EFF0F4]">
+      <p className="mt-1.5 text-[14px] font-normal leading-5.25 tracking-[-0.02em] text-[#EFF0F4]">
         {person.birthDate}
       </p>
     </div>
